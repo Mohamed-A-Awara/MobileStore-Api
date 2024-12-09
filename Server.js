@@ -27,6 +27,11 @@ function dbConnention (){
     mongoose.connect(url).then(()=> console.log(`DB is Connected...`)).catch((e)=> console.log(e))
 }
 
+app.get('/test' , (req , res)=>{
+    res.status(200).send({
+        msg : "Hello World !"
+    })
+})
 
 // Not Found Request
 app.all('*' , (req , res)=>{
